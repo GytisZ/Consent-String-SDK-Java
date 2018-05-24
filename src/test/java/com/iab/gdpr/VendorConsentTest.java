@@ -24,6 +24,7 @@ public class VendorConsentTest {
         assertThat(consent.getConsentRecordCreated(), Matchers.is(Instant.ofEpochMilli(14924661858L * 100)));
         assertThat(consent.getConsentRecordLastUpdated(), Matchers.is(Instant.ofEpochMilli(15240021858L * 100)));
         assertThat(consent.getAllowedPurposes().size(), Matchers.is(5));
+        assertThat(consent.getAllowedPurposesBits(), Matchers.is(6291482));
 
         assertTrue(consent.isPurposeAllowed(2));
         assertFalse(consent.isPurposeAllowed(1));
@@ -50,6 +51,7 @@ public class VendorConsentTest {
         assertThat(consent.getConsentRecordCreated(), Matchers.is(Instant.ofEpochMilli(14924661858L * 100)));
         assertThat(consent.getConsentRecordLastUpdated(), Matchers.is(Instant.ofEpochMilli(15240021858L * 100)));
         assertThat(consent.getAllowedPurposes().size(), Matchers.is(8));
+        assertThat(consent.getAllowedPurposesBits(), Matchers.is(2000001));
 
         assertTrue(consent.isPurposeAllowed(4));
         assertFalse(consent.isPurposeAllowed(1));
